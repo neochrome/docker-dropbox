@@ -14,3 +14,8 @@ can specify the hostname of the container like this:
 ```
 $ docker run ... --hostname my-device-name ...
 ```
+
+## Example
+```
+$ docker run --rm -it --hostname backup --volumes-from dropbox-data neochrome/dropbox
+```
