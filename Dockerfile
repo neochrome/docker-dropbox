@@ -7,4 +7,7 @@ RUN curl -L "https://www.dropbox.com/download?plat=lnx.x86_64" \
 	&& mv /tmp/.dropbox-dist /opt/dropbox 
 RUN mkdir -p /dropbox
 ENV HOME /dropbox
-CMD /opt/dropbox/dropboxd
+CMD cd \
+	&& mkdir -p .dropbox-dist \
+	&& chmod -w .dropbox-dist \
+	&& /opt/dropbox/dropboxd
