@@ -8,6 +8,5 @@ RUN curl -L "https://d1ilhw0800yew8.cloudfront.net/client/dropbox-lnx.x86_64-3.1
 RUN mkdir -p /dropbox
 ENV HOME /dropbox
 CMD cd \
-	&& mkdir -p .dropbox-dist \
-	&& chmod -w .dropbox-dist \
+	&& ln -sf /dev/null .dropbox-dist \
 	&& /opt/dropbox/dropboxd
