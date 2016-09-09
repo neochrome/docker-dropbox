@@ -1,0 +1,9 @@
+FROM odise/busybox-python:stable
+MAINTAINER Johan Stenqvist <johan@stenqvist.net>
+LABEL Description="Dockerized dropbox"
+WORKDIR /dropbox
+ENV HOME /dropbox
+RUN curl -L "https://www.dropbox.com/download?plat=lnx.x86_64" \
+	| gunzip -c - | tar -xvf -
+VOLUME ["/dropbox"]
+CMD ./.dropbox-dist/dropboxd
